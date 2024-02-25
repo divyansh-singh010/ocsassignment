@@ -28,6 +28,10 @@ DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['.vercel.app']
 
+CORS_ALLOWED_ORIGINS = [
+    "https://ocsassignment.vercel.app",
+]
+
 
 # Application definition
 
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     # installed apps
     'users',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ocsassignment.urls'
