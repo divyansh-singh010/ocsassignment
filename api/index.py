@@ -3,3 +3,5 @@ import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ocsassignment.settings")
 application = get_wsgi_application()
+
+handler = application
