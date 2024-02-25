@@ -28,10 +28,7 @@ DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['.vercel.app']
 
-CORS_ALLOWED_ORIGINS = [
-    "https://ocsassignment.vercel.app",
-    "http://localhost:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
