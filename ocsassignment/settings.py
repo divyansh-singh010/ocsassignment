@@ -29,6 +29,8 @@ DEBUG = os.environ.get('DEBUG', False)
 ALLOWED_HOSTS = ['.vercel.app']
 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_HEADERS = ['content-type', 'authorization']
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'DELETE']
 
 
 # Application definition
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ocsassignment.urls'
